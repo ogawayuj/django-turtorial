@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <meta>
+        <meta charset="utf-8">
+        <title>{% block titile%}{% endblock %}</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src='{% static "manager/js/bootstrap.min.js" %}'></script>
+        <script src='{% static "manager/js/bootstrap.bundle.min.js" %}'></script>
+        <link href='{% static "manager/css/bootstrap.min.css" %}' rel="stylesheet">
+        <!--
+            <link href='{% static "manager/css/bootstrap-reboot.min.css" %}' rel="stylesheet"> 
+        -->
+        <link href='{% static "manager/css/bootstrap-grid.min.css" %}' rel="stylesheet">
+    </head>
+    <body>
+        <div id="warpper">
+        <!---        -->
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand">Header</a>
+                <div class="navbar-default sidebar" role="navigation">
+                    <ul class="nav" id="side-menu">
+                        <li><a href="/worker_list/"><i class="fa fa-bar-chart" aria-hidden="true"></i>  Worker一覧</a></li>
+                    </ul>
+                </div>
+            </nav>
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
